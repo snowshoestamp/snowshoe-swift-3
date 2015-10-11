@@ -31,7 +31,7 @@ github "mluedke2/snowshoe-swift"
 
 ### Example
 
-To run the example project, clone the repo, run `pod install` from the Example directory, and open `SnowShoeSwift-xcworkspace`.
+To run the example project, clone the repo, run `pod install` from the Example directory, and open `SnowShoe-Swift.xcworkspace`.
 
 ### In your own project
 
