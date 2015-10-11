@@ -1,5 +1,7 @@
 # SnowShoe-Swift
 
+[![CI Status](http://img.shields.io/travis/mluedke2/snowshoe-swift.svg?style=flat)](https://travis-ci.org/mluedke2/snowshoe-swift)
+
 The [SnowShoe Stamp](http://www.snowshoestamp.com) is an authentication tool for smartphones.
 
 <p align="center" >
