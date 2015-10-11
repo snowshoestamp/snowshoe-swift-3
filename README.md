@@ -1,6 +1,10 @@
 # SnowShoe-Swift
 
 [![CI Status](http://img.shields.io/travis/mluedke2/snowshoe-swift.svg?style=flat)](https://travis-ci.org/mluedke2/snowshoe-swift)
+[![Version](https://img.shields.io/cocoapods/v/SnowShoe-Swift.svg?style=flat)](http://cocoapods.org/pods/SnowShoe-Swift)
+[![License](https://img.shields.io/cocoapods/l/SnowShoe-Swift.svg?style=flat)](http://cocoapods.org/pods/SnowShoe-Swift)
+[![Platform](https://img.shields.io/cocoapods/p/SnowShoe-Swift.svg?style=flat)](http://cocoapods.org/pods/SnowShoe-Swift)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 The [SnowShoe Stamp](http://www.snowshoestamp.com) is an authentication tool for smartphones.
 
@@ -15,6 +19,12 @@ it, add the following line to your Podfile:
 
 ```ruby
 pod "SnowShoe-Swift"
+```
+
+SnowShoe-Swift is also available with [Carthage](https://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
+
+```ruby
+github "mluedke2/snowshoe-swift"
 ```
 
 ## Usage
