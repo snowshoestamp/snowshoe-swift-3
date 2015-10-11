@@ -9,7 +9,8 @@ language: objective-c
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 install:
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-- set -o pipefail && xcodebuild test -workspace Example/SnowShoe-Swift.xcworkspace -scheme SnowShoe-Swift-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-- pod lib lint --quick
+  - open -a "simulator" --args -CurrentDeviceUDID FCBB11B4-D7C8-4085-9067-2CEDA2BFC895
+  - xcodebuild clean build test -workspace Example/SnowShoe-Swift.xcworkspace -scheme 'SnowShoe-Swift-Example' -sdk iphonesimulator9.0 -destination 'platform=iOS Simulator,name=iPhone 6 Plus' | xcpretty -c  && exit ${PIPESTATUS[0]}
+  - pod lib lint --quick
