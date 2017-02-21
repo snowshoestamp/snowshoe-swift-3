@@ -9,13 +9,13 @@
 import OAuthSwift
 import ObjectMapper
 
-public class SnowShoeView: UIView {
+open class SnowShoeView: UIView {
   
-  public var appKey: String?
-  public var appSecret: String?
-  public var delegate: SnowShoeDelegate?
+  open var appKey: String?
+  open var appSecret: String?
+  open var delegate: SnowShoeDelegate?
   
-  let baseUrl = "http://beta.snowshoestamp.com/api/v2/stamp"
+  let baseUrl = "http://www.snowshoestamp.com/api/v2/stamp"
   let touchCount = 5
   
   override init (frame: CGRect) {
@@ -29,36 +29,35 @@ public class SnowShoeView: UIView {
   }
   
   func setupStampDetection() {
-    let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleStamp:")
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(SnowShoeView.handleStamp(_:)))
     tapRecognizer.numberOfTapsRequired = 1
     tapRecognizer.numberOfTouchesRequired = touchCount
     addGestureRecognizer(tapRecognizer)
   }
   
-  func handleStamp(sender: UIGestureRecognizer) {
+  func handleStamp(_ sender: UIGestureRecognizer) {
     
     if let appKey = appKey, let appSecret = appSecret {
       var request = [[CGFloat]]()
       
       for i in 0...touchCount-1 {
-        let point = sender.locationOfTouch(i, inView: self)
+        let point = sender.location(ofTouch: i, in: self)
         request.append([point.x, point.y])
       }
       
-      let data = try? NSJSONSerialization.dataWithJSONObject(request, options: [])
-      let base64Encoded = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+      let data = try? JSONSerialization.data(withJSONObject: request, options: [])
+      let base64Encoded = data!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
       
       let client = OAuthSwiftClient(consumerKey: appKey, consumerSecret: appSecret)
       
       client.post(baseUrl,
         parameters: ["data": base64Encoded],
-        success: { (data, response) -> Void in
-          let JSONObject: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
-          let response = Mapper<SnowShoeResult>().map(JSONObject)
+        success: { response  in
+          let response = SnowShoeResult(JSONString: response.string!)
           self.delegate?.onStampResult(response)
         },
-        failure: { (error) -> Void in
-          print("\(error.localizedDescription)")
+        failure: { error in
+          print("ERROR: \(error.localizedDescription)")
           self.delegate?.onStampResult(nil)
       })
       

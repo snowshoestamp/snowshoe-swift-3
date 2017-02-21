@@ -11,7 +11,7 @@ import ObjectMapper
 public struct SnowShoeStamp: Mappable {
   public var serial: String!
   
-  public init?(_ map: Map) {}
+  public init?(map: Map) {}
   
   mutating public func mapping(map: Map) {
     serial <- map["serial"]

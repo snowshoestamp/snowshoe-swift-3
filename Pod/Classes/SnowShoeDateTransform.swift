@@ -9,26 +9,26 @@
 import Foundation
 import ObjectMapper
 
-public class SnowShoeDateTransform: TransformType {
+open class SnowShoeDateTransform: TransformType {
   
   let dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS" // "2015-03-24 11:27:33.014149"
   
   public init() {}
   
-  public func transformFromJSON(value: AnyObject?) -> NSDate? {
+  open func transformFromJSON(_ value: Any?) -> Date? {
     if let stringValue = value as? String {
-      let dateFormatter = NSDateFormatter()
+      let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = dateFormat
-      return dateFormatter.dateFromString(stringValue)
+      return dateFormatter.date(from: stringValue)
     }
     return nil
   }
   
-  public func transformToJSON(value: NSDate?) -> String? {
+  open func transformToJSON(_ value: Date?) -> String? {
     if let date = value {
-      let dateFormatter = NSDateFormatter()
+      let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = dateFormat
-      return dateFormatter.stringFromDate(date)
+      return dateFormatter.string(from: date)
     }
     return nil
   }

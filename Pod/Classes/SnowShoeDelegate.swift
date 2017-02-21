@@ -8,5 +8,5 @@
 
 public protocol SnowShoeDelegate {
   func onStampRequestMade()
-  func onStampResult(result: SnowShoeResult?)
+  func onStampResult(_ result: SnowShoeResult?)
 }

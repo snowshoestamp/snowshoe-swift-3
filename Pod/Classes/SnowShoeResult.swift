@@ -9,13 +9,13 @@
 import ObjectMapper
 
 public struct SnowShoeResult: Mappable {
-  public var created: NSDate!
+  public var created: Date!
   public var error: SnowShoeError?
   public var receipt: String!
   public var secure: Bool!
   public var stamp: SnowShoeStamp?
   
-  public init?(_ map: Map) {}
+  public init?(map: Map) {}
   
   mutating public func mapping(map: Map) {
     created <- (map["created"], SnowShoeDateTransform())

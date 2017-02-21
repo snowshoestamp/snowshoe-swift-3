@@ -21,11 +21,24 @@ it, add the following line to your Podfile:
 pod "SnowShoe-Swift"
 ```
 
+For Swift 3:
+
+```ruby
+pod "SnowShoe-Swift", :git => 'https://github.com/snowshoestamp/snowshoe-swift-3'
+```
+
 SnowShoe-Swift is also available with [Carthage](https://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
 
 ```ruby
 github "mluedke2/snowshoe-swift"
 ```
+
+For Swift 3:
+
+```ruby
+github "snowshoestamp/snowshoe-swift-3"
+```
+
 
 ## Usage
 
@@ -65,7 +78,7 @@ snowShoeView.delegate = delegate
 
 ## Author
 
-Matt Luedke, mluedke2@gmail.com
+SnowShoe (support@snowshoestamp.com) & Matt Luedke (mluedke2@gmail.com)
 
 Hardware and API managed by [SnowShoe](http://snowshoestamp.com/)
 

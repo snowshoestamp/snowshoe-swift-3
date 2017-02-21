@@ -12,7 +12,7 @@ public struct SnowShoeError: Mappable {
   public var code: Int!
   public var message: String!
   
-  public init?(_ map: Map) {}
+  public init?(map: Map) {}
   
   mutating public func mapping(map: Map) {
     code <- map["code"]

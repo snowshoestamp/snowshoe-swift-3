@@ -1,14 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'SnowShoe-Swift_Example', :exclusive => true do
+target 'SnowShoe-Swift_Example' do
   pod "SnowShoe-Swift", :path => "../"
 end
 
-target 'SnowShoe-Swift_Tests', :exclusive => true do
-  pod "Quick", "0.6.0"
-  pod "Nimble", "2.0.0"
-  pod "SnowShoe-Swift", :path => "../"
-
-  
-end
+# ignore quick/nimble for now
+#target 'SnowShoe-Swift_Tests', :exclusive => true do
+#  pod "Quick", "0.6.0"
+#  pod "Nimble", "2.0.0"
+#  pod "SnowShoe-Swift", :path => "../"
+#end

@@ -1,15 +1,11 @@
 PODS:
-  - Nimble (2.0.0)
-  - OAuthSwift (0.4.4)
-  - ObjectMapper (0.17)
-  - Quick (0.6.0)
-  - SnowShoe-Swift (1.0.0):
-    - OAuthSwift (= 0.4.4)
-    - ObjectMapper (= 0.17)
+  - OAuthSwift (1.1.0)
+  - ObjectMapper (2.2.3)
+  - SnowShoe-Swift (2.0.0):
+    - OAuthSwift (= 1.1.0)
+    - ObjectMapper (= 2.2.3)
 
 DEPENDENCIES:
-  - Nimble (= 2.0.0)
-  - Quick (= 0.6.0)
   - SnowShoe-Swift (from `../`)
 
 EXTERNAL SOURCES:
@@ -17,10 +13,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 472e75466819eb8c06299233e87c694a9b51328a
-  OAuthSwift: b25a2b1a4c913d06a2b92b2a1c34ed6208b56951
-  ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
-  Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
-  SnowShoe-Swift: 777220f518566942aa45361cc94ca3c725b5c6be
+  OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
+  ObjectMapper: d3b3de11267f5d971f390eb8d63dd509116a4329
+  SnowShoe-Swift: ae60f55c17d51cf955ebbf9cb1a4efc01b7c563f
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: a5e4b1b40d7da1d73abea02cf25384f3d59c5c5b
+
+COCOAPODS: 1.2.0

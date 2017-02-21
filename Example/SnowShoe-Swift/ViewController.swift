@@ -28,7 +28,7 @@ extension ViewController: SnowShoeDelegate {
     // start activity indicator, etc
   }
 
-  func onStampResult(result: SnowShoeResult?) {
+  func onStampResult(_ result: SnowShoeResult?) {
     if let result = result {
       if let stamp = result.stamp {
         // handle stamp
@@ -39,6 +39,7 @@ extension ViewController: SnowShoeDelegate {
       }
     } else {
       // handle request error
+      print("There was an error, try again.")
     }
   }
 }
