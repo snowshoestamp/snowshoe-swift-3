@@ -15,7 +15,7 @@ open class SnowShoeView: UIView {
   open var appSecret: String?
   open var delegate: SnowShoeDelegate?
   
-  let baseUrl = "http://www.snowshoestamp.com/api/v2/stamp"
+  let baseUrl = "https://www.snowshoestamp.com/api/v2/stamp"
   let touchCount = 5
   
   override init (frame: CGRect) {
@@ -35,7 +35,7 @@ open class SnowShoeView: UIView {
     addGestureRecognizer(tapRecognizer)
   }
   
-  func handleStamp(_ sender: UIGestureRecognizer) {
+  @objc func handleStamp(_ sender: UIGestureRecognizer) {
     
     if let appKey = appKey, let appSecret = appSecret {
       var request = [[CGFloat]]()
@@ -50,7 +50,7 @@ open class SnowShoeView: UIView {
       
       let client = OAuthSwiftClient(consumerKey: appKey, consumerSecret: appSecret)
       
-      client.post(baseUrl,
+      _ = client.post(baseUrl,
         parameters: ["data": base64Encoded],
         success: { response  in
           let response = SnowShoeResult(JSONString: response.string!)
