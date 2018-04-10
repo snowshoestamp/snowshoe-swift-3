@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SnowShoe-Swift"
-  s.version          = "2.1.0"
+  s.version          = "2.0.0"
   s.summary          = "iOS wrapper for SnowShoe in Swift"
   s.description      = <<-DESC
   SnowShoe is an authentication tool for smartphones. This library provides a simple Swift wrapper.
