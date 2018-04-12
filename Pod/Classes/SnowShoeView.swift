@@ -15,7 +15,7 @@ open class SnowShoeView: UIView {
   open var appSecret: String?
   open var delegate: SnowShoeDelegate?
   
-  let baseUrl = "https://www.snowshoestamp.com/api/v2/stamp"
+  let baseUrl = "https://beta.snowshoestamp.com/api/v2/stamp"
   let touchCount = 5
   
   override init (frame: CGRect) {
