@@ -27,7 +27,7 @@ For Swift 3:
 pod "SnowShoe-Swift", :git => 'https://github.com/snowshoestamp/snowshoe-swift-3'
 ```
 
-For Swift 4:
+For Swift 4.1:
 
 ```ruby
 pod "SnowShoe-Swift", :git => 'https://github.com/snowshoestamp/snowshoe-swift-3', :branch => 'swift_4'
